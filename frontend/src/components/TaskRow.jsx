@@ -1,6 +1,7 @@
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
 
-export default memo(function TaskRow({ title, status, createdAt }) {
+export default memo(function TaskRow({ title, status, createdAt, id }) {
     function setBackground(status) {
         switch (status) {
             case 'To do':
@@ -16,7 +17,9 @@ export default memo(function TaskRow({ title, status, createdAt }) {
 
     return (
         <tr>
-            <td>{title}</td>
+            <td>
+                <Link to={`/task/${id}`}>{title}</Link>
+            </td>
             <td style={{ backgroundColor: `${setBackground(status)}` }}>
                 {status}
             </td>

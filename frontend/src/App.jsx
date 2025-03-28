@@ -4,6 +4,7 @@ import GlobalContext from './contexts/GlobalContext';
 import DefaultLayout from './layout/DefaultLayout';
 import TaskList from './pages/TaskList';
 import AddTask from './pages/AddTask';
+import TaskDetail from './pages/TaskDetail';
 import useTasks from './hooks/useTasks';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                     <Route element={<DefaultLayout />}>
                         <Route index element={<TaskList />} />
                         <Route path="/addTask" element={<AddTask />} />
+                        <Route path="/task/:id" element={<TaskDetail />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

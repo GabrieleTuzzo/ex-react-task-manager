@@ -15,8 +15,8 @@ export default function TaskList() {
                 </tr>
             </thead>
             <tbody>
-                {tasks.map((task, i) => (
-                    <TaskRow key={i} {...task} />
+                {tasks.map((task) => (
+                    <TaskRow key={task.id} {...task} />
                 ))}
             </tbody>
         </table>
